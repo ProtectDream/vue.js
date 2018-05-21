@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<div>
+    <!-- 在vuejs中，使用observe劫持监听所有的属性，如果属性的值有变化了则会通知watcher，wtatch在经过处理之后
+    会更新视图，而compile有着解析指令，订阅数据变化绑定更新函数的的作用，本次源码的解析都来自于vue1.0版本，是个人的理解整理而出
+    ，由于时间有限肯定会有纰漏的地方后续会继续更新优化，如果有理解不对的地方，还请包含指正 -->
+</div>
+
+<div id="test">
+  <p>{{person}}</p>
+</div>
+
+<script type="text/javascript" src="./lib/mvvm.js"></script>
+<script type="text/javascript" src="./lib/compile.js"></script>
+<script type="text/javascript" src="./lib/observer.js"></script>
+<script type="text/javascript" src="./lib/watcher.js"></script>
+<script>
+  new MVVM({
+    el: '#test',
+    data: {
+      person: 'mata',
+      deft: {
+        name: '厂长',
+        age: 20
+      }
+    }
+  })
+</script>
+</body>
+</html>
